@@ -7,10 +7,6 @@ const kirimBtn = document.getElementById('btnsearch');
 let audio;
 
 
-const removeInput = document.getElementById('remove-btn');
-// removeInput.addEventListener('click' () => {
-//   search.value = "";
-// })
 
 async function getData(words) {
     const resp = await fetch(APIURL + words);

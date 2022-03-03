@@ -8,10 +8,6 @@ let audio;
 
 getData('time');
 
-// const remove_input = document.getElementById('remove-btn');
-// remove_input.addEventListener('click', () => {
-//   search.value = 
-// })
 
 async function getData(words) {
     const resp = await fetch(APIURL + words);
