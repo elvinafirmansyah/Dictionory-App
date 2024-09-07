@@ -32,14 +32,14 @@
   </style>
 </head>
 <body class="flex flex-col justify-center items-center bg-gray-900">
-  <div class="app bg-white min-h-screen w-full lg:w-380 md:w-380 mx-5 max-w-sm lg:max-w-md">
+  <div class="app glass min-h-screen w-full lg:w-380 md:w-380 mx-5 max-w-sm lg:max-w-md">
     <div class="container-sm">
-        <div class="px-4 content py-3">
+        <div class="px-6 content py-4">
           <div class="flex justify-between items-center">
-            <h2 class="text-sky-700 text-3xl brand font-semibold mb-2">Incriaysc</h2>
+            <h2 class="text-gradient text-3xl brand font-semibold mb-2">Incriaysc</h2>
               <div class="relative inline-block text-left dropdown">
                 <span class="rounded-md shadow-sm"
-                  ><button class="inline-flex justify-center w-full py-3 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white borderrounded-md hover:text-gray-500 focus:outline-none focus:text-sky-500 focus:shadow-outline-blue active:text-gray-800" 
+                  ><button class="inline-flex justify-center w-full py-3 text-sm font-medium leading-5 text-gray-400 transition duration-150 ease-in-out borderrounded-md hover:text-gray-500 focus:outline-none focus:text-sky-500 focus:shadow-outline-blue active:text-gray-800" 
                   type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
                     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
@@ -47,19 +47,20 @@
                     </button
                 ></span>
                 <div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
-                  <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-sky-400/25 divide-y  rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
+                  <div class="absolute right-0 w-56 mt-2 option origin-top-right border border-sky-400/25 divide-y rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
                     <div class="py-2">
-                      <a href="support.html" tabindex="1" class="text-gradient flex justify-between w-full px-4 py-2 text-sm leading-5 text-left"  role="menuitem" >Support</a>
+                      <a href="about" tabindex="0" class="text-gradient flex justify-between w-full px-4 py-2 text-sm leading-5 text-left"  role="menuitem" >About Us</a>
+                      <a href="support" tabindex="1" class="text-gradient flex justify-between w-full px-4 py-2 text-sm leading-5 text-left"  role="menuitem" >Support</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card bg-sky-400/75 flex flex-col items-center justify-center px-4 py-8 my-28 rounded-lg">
-              <h2 class="text-sky-700 text-4xl brand font-semibold mb-1.5">About Us</h2>
-              <p class="text-center text-15 text-white my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quis perspiciatis fuga ipsam fugit voluptates fugiat nesciunt maxime totam, expedita a laudantium saepe omnis distinctio quos neque, iusto pariatur quidem est praesentium obcaecati quibusdam minima.</p>
+            <div class="card glass-white px-4 flex flex-col items-center justify-center py-10 my-6 rounded-xl">
+              <h2 class="text-gradient text-4xl brand font-semibold mb-1.5">About Us</h2>
+              <p class="text-center text-15 text-white my-2">Incriaysc is the platform to search any words by JavaScript. Incriaysc is made to make easier all learners, english learners exactly to be more understand what the meaning all words which you need. Made by JavaScript and Tailwind.</p>
             </div>
-            <p class="text-lg font-medium mt-8 brand text-center">Made by ❤️ Elvina Firmansyah</p>
+            <p class="text-lg text-white font-medium mt-8 brand text-center">Made by ❤️ Elvina Firmansyah</p>
           </div>
         </div>
         
@@ -68,19 +69,16 @@
       </div>
       <!-- Content Selesai-->
       <!-- Navbar Section -->
-      <div class="navbar bg-sky-500 py-4 lg:py-5 fixed bottom-0 lg:pr-0" style="padding-right: 0.1rem;">
+      <div class="navbar background-gradient py-4 lg:py-5 fixed bottom-0 lg:pr-0" style="padding-right: 0.1rem;">
         <ul class="flex text-center items-center justify-around mx-navbar text-white text-10 lg:text-base md:text-md">
-          <li class="px-3 flex-co">
-            <i class="bi bi-house-fill"></i>
-            <a href="index.html">Home</a>
+        <li class="px-3 flex-col">
+            <a href="index"><i class="bi bi-house-fill"></i> Home</a>
           </li>
           <li class="px-3">
-            <i class="bi bi-compass"></i>
-            <a href="search.html">Search</a>
+            <a href="search"><i class="bi bi-compass"></i> Search</a>
           </li>
-          <li class="px-3 text-sky-800">
-            <i class="bi bi-layout-text-window"></i>
-            <a href="about.html">About</a>
+          <li class="px-3 black">
+            <a href="about"><i class="bi bi-layout-text-window"></i> About</a>
           </li>
         </ul>
       </div>

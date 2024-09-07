@@ -1,23 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+:root {
+  --glass: rgb(0, 0, 0, 0.2);
+  --glass-white: rgb(255, 255, 255, 0.06);
+  --black: #0e131f;
+  --gradient: -webkit-linear-gradient(right, #0281c7, #38bdf8, #0281c7);
+}
 .brand{
-  font-family: 'Fredoka', sans-serif;
+  font-weight: black;
+}
+.black {
+  color: var(--black);
+}
+.glass {
+  background-color: var(--glass);
+}
+.glass-white {
+  background: var(--glass-white);
+}
+.option {
+  background-color: var(--black);
 }
 .dropdown:focus-within .dropdown-menu {
   opacity:1;
   transform: translate(0) scale(1);
   visibility: visible;
 }
+.background-gradient {
+  background: var(--gradient);
+}
 .text-gradient{
-  background: -webkit-linear-gradient(right, #38bdf8, #0369a1, #a1deff);
+  background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .text-gradient:hover{
-  background: -webkit-linear-gradient(left, #38bdf8, #0369a1, #a1deff);
+  background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation-duration: 3s;

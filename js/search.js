@@ -18,7 +18,7 @@ async function getData(words) {
 }
 
 function createDataCard(word) {
-    if (word.ok) {
+    if (!word.ok) {
      const cannotFind = `
         <div class="max-w-md mx-auto overflow-hidden md:max-w-2xl">
           <div class="detail mt-1 flex p-1">
@@ -28,33 +28,34 @@ function createDataCard(word) {
       `;
       main.innerHTML = cannotFind;
     }
+    console.log(word)
     const cardHTML = `
-      <div class="max-w-md mx-auto bg-gray-100 rounded-xl overflow-hidden md:max-w-2xl">
-      <div class="p-5">
+      <div class="max-w-md mx-auto glass-white rounded-xl overflow-hidden md:max-w-2xl">
+    <div class="p-5">
 
-        <div class="flex justify-between items-stretch">
-          <div class="word">
-            <h2 class="font-bold text-2xl" id="word">${word[0].word}</h2>
-            <div class="detail mt-1 flex">
-              <p id="partOfSpeech" class="text-sky-400/75 text-md pr-2">${word[0].meanings[0].partOfSpeech}</p>
-              <p id="phonetics" class="text-gray-400 text-md">${word[0].phonetics[0].text}</p>
-            </div>
+      <div class="flex justify-between items-stretch">
+        <div class="word">
+          <h2 class="font-bold text-white text-2xl" id="word">${word[0].word}</h2>
+          <div class="detail mt-1 flex">
+            <p id="partOfSpeech" class="text-gradient text-md pr-2">${word[0].meanings[0].partOfSpeech}</p>
+            <p id="phonetics" class="text-gray-400 text-md">${word[0].phonetics[0].text}</p>
           </div>
-          <button class="p-3 text-black hover:text-sky-400" id="audio_play" onclick="playAudio()"><i class="bi bi-volume-up-fill"></i></button>
         </div>
-
-        <div class="bg-sky-300/50 rounded-lg pt-3 pb-1 px-3 my-3">
-          <p class="font-semibold text-lg">Definition:</p>
-          <p class="word text-sm mb-3" id="definition">${word[0].meanings[0].definitions[0].definition}</p>
-        </div>
-
-        <div class="bg-sky-300/50 rounded-lg pt-3 pb-1 px-3 my-3">
-          <p class="font-semibold text-lg">Example:</p>
-          <p class="word text-sm mb-3" id="example">${word[0].meanings[0].definitions[0].example}</p>
-        </div>
-
+        <button class="p-3 text-white hover:text-sky-400" onclick="fourthPlayAudio();"><i class="bi bi-volume-up-fill"></i></button>
       </div>
+
+      <div class="background-gradient text-white rounded-lg pt-3 pb-1 px-3 my-3">
+        <p class="font-semibold text-lg">Definition:</p>
+        <p class="word text-sm mb-3" id="definition">${word[0].meanings[0].definitions[0].definition}</p>
+      </div>
+
+      <div class="background-gradient text-white pt-3 pb-1 px-3 my-3">
+        <p class="font-semibold text-lg">Example:</p>
+        <p class="word text-sm mb-3" id="example">${word[0].meanings[0].definitions[0].example}</p>
+      </div>
+
     </div>
+  </div>
     `;
     
 
@@ -90,26 +91,26 @@ function createSecondData(secondword) {
     secondMain.innerHTML = secondError;
   }
   const secondCardHTML = `
-    <div class="max-w-md mx-auto bg-gray-100 rounded-xl overflow-hidden md:max-w-2xl">
+    <div class="max-w-md mx-auto glass-white rounded-xl overflow-hidden md:max-w-2xl">
     <div class="p-5">
 
       <div class="flex justify-between items-stretch">
         <div class="word">
-          <h2 class="font-bold text-2xl" id="word">${secondword[0].word}</h2>
+          <h2 class="font-bold text-white text-2xl" id="word">${secondword[0].word}</h2>
           <div class="detail mt-1 flex">
-            <p id="partOfSpeech" class="text-sky-400/75 text-md pr-2">${secondword[0].meanings[0].partOfSpeech}</p>
+            <p id="partOfSpeech" class="text-gradient text-md pr-2">${secondword[0].meanings[0].partOfSpeech}</p>
             <p id="phonetics" class="text-gray-400 text-md">${secondword[0].phonetics[0].text}</p>
           </div>
         </div>
-        <button class="p-3 text-black hover:text-sky-400" onclick="secondPlayAudio();"><i class="bi bi-volume-up-fill"></i></button>
+        <button class="p-3 text-white hover:text-sky-400" onclick="fourthPlayAudio();"><i class="bi bi-volume-up-fill"></i></button>
       </div>
 
-      <div class="bg-sky-300/50 rounded-lg pt-3 pb-1 px-3 my-3">
+      <div class="background-gradient text-white rounded-lg pt-3 pb-1 px-3 my-3">
         <p class="font-semibold text-lg">Definition:</p>
         <p class="word text-sm mb-3" id="definition">${secondword[0].meanings[0].definitions[0].definition}</p>
       </div>
 
-      <div class="bg-sky-300/50 rounded-lg pt-3 pb-1 px-3 my-3">
+      <div class="background-gradient text-white pt-3 pb-1 px-3 my-3">
         <p class="font-semibold text-lg">Example:</p>
         <p class="word text-sm mb-3" id="example">${secondword[0].meanings[0].definitions[0].example}</p>
       </div>
@@ -139,8 +140,8 @@ async function getThirdData(threewords) {
   createThirdData(respData);
 }
 
-function createThirdData(thridword) {
-  if (!thridword.ok) {
+function createThirdData(thirdword) {
+  if (!thirdword.ok) {
    const thridError = `
       <div class="max-w-md mx-auto overflow-hidden md:max-w-2xl">
         <div class="detail mt-1 flex p-1">
@@ -151,35 +152,35 @@ function createThirdData(thridword) {
     thirdMain.innerHTML = thridError;
   }
   const thridCardHTML = `
-    <div class="max-w-md mx-auto bg-gray-100 rounded-xl overflow-hidden md:max-w-2xl">
+    <div class="max-w-md mx-auto glass-white rounded-xl overflow-hidden md:max-w-2xl">
     <div class="p-5">
 
       <div class="flex justify-between items-stretch">
         <div class="word">
-          <h2 class="font-bold text-2xl" id="word">${thridword[0].word}</h2>
+          <h2 class="font-bold text-white text-2xl" id="word">${thirdword[0].word}</h2>
           <div class="detail mt-1 flex">
-            <p id="partOfSpeech" class="text-sky-400/75 text-md pr-2">${thridword[0].meanings[0].partOfSpeech}</p>
-            <p id="phonetics" class="text-gray-400 text-md">${thridword[0].phonetics[0].text}</p>
+            <p id="partOfSpeech" class="text-gradient text-md pr-2">${thirdword[0].meanings[0].partOfSpeech}</p>
+            <p id="phonetics" class="text-gray-400 text-md">${thirdword[0].phonetics[0].text}</p>
           </div>
         </div>
-        <button class="p-3 text-black hover:text-sky-400" onclick="thridPlayAudio();"><i class="bi bi-volume-up-fill"></i></button>
+        <button class="p-3 text-white hover:text-sky-400" onclick="fourthPlayAudio();"><i class="bi bi-volume-up-fill"></i></button>
       </div>
 
-      <div class="bg-sky-300/50 rounded-lg pt-3 pb-1 px-3 my-3">
+      <div class="background-gradient text-white rounded-lg pt-3 pb-1 px-3 my-3">
         <p class="font-semibold text-lg">Definition:</p>
-        <p class="word text-sm mb-3" id="definition">${thridword[0].meanings[0].definitions[0].definition}</p>
+        <p class="word text-sm mb-3" id="definition">${thirdword[0].meanings[0].definitions[0].definition}</p>
       </div>
 
-      <div class="bg-sky-300/50 rounded-lg pt-3 pb-1 px-3 my-3">
+      <div class="background-gradient text-white pt-3 pb-1 px-3 my-3">
         <p class="font-semibold text-lg">Example:</p>
-        <p class="word text-sm mb-3" id="example">${thridword[0].meanings[0].definitions[0].example}</p>
+        <p class="word text-sm mb-3" id="example">${thirdword[0].meanings[0].definitions[0].example}</p>
       </div>
 
     </div>
   </div>
   `;
 
-  thridAudio = new Audio(thridword[0].phonetics[3].audio);
+  thridAudio = new Audio(thirdword[0].phonetics[3].audio);
 
   thirdMain.innerHTML = thridCardHTML;
 }
@@ -212,26 +213,26 @@ function createFourthData(fourthword) {
     fourthMain.innerHTML = thridError;
   }
   const fourthCardHTML = `
-    <div class="max-w-md mx-auto bg-gray-100 rounded-xl overflow-hidden md:max-w-2xl">
+    <div class="max-w-md mx-auto glass-white rounded-xl overflow-hidden md:max-w-2xl">
     <div class="p-5">
 
       <div class="flex justify-between items-stretch">
         <div class="word">
-          <h2 class="font-bold text-2xl" id="word">${fourthword[0].word}</h2>
+          <h2 class="font-bold text-white text-2xl" id="word">${fourthword[0].word}</h2>
           <div class="detail mt-1 flex">
-            <p id="partOfSpeech" class="text-sky-400/75 text-md pr-2">${fourthword[0].meanings[0].partOfSpeech}</p>
+            <p id="partOfSpeech" class="text-gradient text-md pr-2">${fourthword[0].meanings[0].partOfSpeech}</p>
             <p id="phonetics" class="text-gray-400 text-md">${fourthword[0].phonetics[0].text}</p>
           </div>
         </div>
-        <button class="p-3 text-black hover:text-sky-400" onclick="fourthPlayAudio();"><i class="bi bi-volume-up-fill"></i></button>
+        <button class="p-3 text-white hover:text-sky-400" onclick="fourthPlayAudio();"><i class="bi bi-volume-up-fill"></i></button>
       </div>
 
-      <div class="bg-sky-300/50 rounded-lg pt-3 pb-1 px-3 my-3">
+      <div class="background-gradient text-white rounded-lg pt-3 pb-1 px-3 my-3">
         <p class="font-semibold text-lg">Definition:</p>
         <p class="word text-sm mb-3" id="definition">${fourthword[0].meanings[0].definitions[0].definition}</p>
       </div>
 
-      <div class="bg-sky-300/50 rounded-lg pt-3 pb-1 px-3 my-3">
+      <div class="background-gradient text-white pt-3 pb-1 px-3 my-3">
         <p class="font-semibold text-lg">Example:</p>
         <p class="word text-sm mb-3" id="example">${fourthword[0].meanings[0].definitions[0].example}</p>
       </div>

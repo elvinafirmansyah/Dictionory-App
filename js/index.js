@@ -27,32 +27,32 @@ function createDataCard(word) {
       main.innerHTML = cannotFind;
     }
     const cardHTML = `
-      <div class="max-w-md mx-auto bg-gray-100 rounded-xl overflow-hidden md:max-w-2xl">
-      <div class="p-5">
+      <div class="max-w-md mx-auto glass-white rounded-xl overflow-hidden md:max-w-2xl">
+    <div class="p-5">
 
-        <div class="flex justify-between items-stretch">
-          <div class="word">
-            <h2 class="font-bold text-2xl" id="word">${word[0].word}</h2>
-            <div class="detail mt-1 flex">
-              <p id="partOfSpeech" class="text-sky-400/75 text-md pr-2">${word[0].meanings[0].partOfSpeech}</p>
-              <p id="phonetics" class="text-gray-400 text-md">${word[0].phonetics[0].text}</p>
-            </div>
+      <div class="flex justify-between items-stretch">
+        <div class="word">
+          <h2 class="font-bold text-white text-2xl" id="word">${word[0].word}</h2>
+          <div class="detail mt-1 flex">
+            <p id="partOfSpeech" class="text-gradient text-md pr-2">${word[0].meanings[0].partOfSpeech}</p>
+            <p id="phonetics" class="text-gray-400 text-md">${word[0].phonetics[0].text}</p>
           </div>
-          <button class="p-3 text-black hover:text-sky-400" onclick="playAudio()"><i class="bi bi-volume-up-fill"></i></button>
         </div>
-
-        <div class="bg-sky-300/50 rounded-lg pt-3 pb-1 px-3 my-3">
-          <p class="font-semibold text-lg">Definition:</p>
-          <p class="word text-sm mb-3" id="definition">${word[0].meanings[0].definitions[0].definition}</p>
-        </div>
-
-        <div class="bg-sky-300/50 rounded-lg pt-3 pb-1 px-3 my-3">
-          <p class="font-semibold text-lg">Example:</p>
-          <p class="word text-sm mb-3" id="example">${word[0].meanings[0].definitions[0].example}</p>
-        </div>
-
+        <button class="p-3 text-white hover:text-sky-400" onclick="fourthPlayAudio();"><i class="bi bi-volume-up-fill"></i></button>
       </div>
+
+      <div class="background-gradient text-white rounded-lg pt-3 pb-1 px-3 my-3">
+        <p class="font-semibold text-lg">Definition:</p>
+        <p class="word text-sm mb-3" id="definition">${word[0].meanings[0].definitions[0].definition}</p>
+      </div>
+
+      <div class="background-gradient text-white pt-3 pb-1 px-3 my-3">
+        <p class="font-semibold text-lg">Example:</p>
+        <p class="word text-sm mb-3" id="example">${word[0].meanings[0].definitions[0].example}</p>
+      </div>
+
     </div>
+  </div>
     `;
   
     audio = new Audio(word[0].phonetics[0].audio);
