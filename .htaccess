@@ -1,4 +1,8 @@
-RewriteEngine on 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html [NC,L]
+RewriteEngine On
+
+# Check if the request doesn't already contain a file extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+
+# Redirect to the .html file without showing .html in the URL
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
